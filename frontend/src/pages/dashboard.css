@@ -1,0 +1,68 @@
+/* Background animated gradient */
+.dashboard-bg {
+  background: linear-gradient(-45deg, #1f1c2c, #2d2b4e, #928dab, #1f1c2c);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Go button style */
+.go-btn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #928dab, #2d2b4e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 20px rgba(255,255,255,0.6), 0 0 40px rgba(146,141,171,0.8);
+  transition: transform 0.3s;
+}
+.go-btn:hover {
+  transform: scale(1.1) rotateY(180deg);
+}
+
+/* Orbit System */
+.orbit-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  animation: rotateOrbit 20s linear infinite;
+}
+
+@keyframes rotateOrbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.orbit-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: -150px; /* circle radius */
+  width: 120px;
+  height: 120px;
+  border-radius: 20px; /* square card with rounded corners */
+  background: #2d2b4e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+  cursor: pointer;
+  text-align: center;
+}
+
+/* 3 rounds evenly spaced on orbit */
+.item-0 { transform: rotate(0deg) translateX(150px); }
+.item-1 { transform: rotate(120deg) translateX(150px); }
+.item-2 { transform: rotate(240deg) translateX(150px); }
